@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <style>
+      /* For smooth transitions on navbar */
+      nav {
+        transition: top 0.3s ease;
+      }
+
+      @media (max-width: 768px) {
+        .s7 {
+          background-image: none !important;
+          background: linear-gradient(to left, #0c2b21, #007a51) !important;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="bg-white overflow-x-hidden">
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full bg-white shadow z-50">
+      <div class="w-[90%] mx-auto flex justify-between items-center h-20">
+        <div class="logo">
+          <img
+            src="./images/logo/eLogo.png"
+            alt="Logo"
+            class="h-[27px] w-[137px]"
+          />
+        </div>
+
+        <!-- Desktop Menu -->
+        <ul
+          class="hidden md:flex gap-[40px] text-[#000000] font-[400] text-[16px]"
+        >
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Amenities</a></li>
+          <li><a href="#">Floor Plans</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">Location</a></li>
+        </ul>
+
+        <!-- Desktop Button -->
+        <button
+          class="hidden md:block w-[168px] h-[48px] font-[500] text-[16px] bg-[#114D72] text-white hover:bg-[rgb(0, 93, 150)]"
+        >
+          Request A Visit
+        </button>
+
+        <!-- Mobile Hamburger -->
+        <div class="md:hidden">
+          <button id="menu-btn" class="text-gray-700 focus:outline-none">
+            <svg
+              class="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-white w-full shadow">
+        <ul class="flex flex-col gap-4 p-4 text-gray-700 font-medium">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Amenities</a></li>
+          <li><a href="#">Floor Plans</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">Location</a></li>
+          <li>
+            <button
+              class="w-full px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+            >
+              Request A Visit
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="mt-[4rem]">
+      <!-- Section 1 -->
+      <section class="s1 w-screen overflow-hidden min-h-[10vh]">
+        <img
+          src="./images/s1/s1A.png"
+          alt="Section Image"
+          class="w-screen h-auto object-fill s1Img"
+        />
+      </section>
+
+      <!-- Section 2 Is Starting From Here -->
+      <section
+        class="s2 py-16 px-4 md:px-12"
+        style="background: linear-gradient(to left, #0c2b21, #007a51)"
+      >
+        <div class="max-w-8xl mx-auto flex flex-col items-center gap-6">
+          <!-- Heading -->
+          <div id="s2-text" class="text-center text-white">
+            <h2 class="font-semibold uppercase text-[28px]">Get In Touch</h2>
+            <p class="font-[400] capitalize text-[20px] mt-2">
+              Please enter details below and we shall get in touch with you
+              shortly.
+            </p>
+          </div>
+
+          <!-- Form -->
+          <div id="s2-form" class="w-full flex justify-center mt-6">
+            <form
+              action=""
+              class="flex flex-col md:flex-row flex-wrap gap-4 md:gap-4 justify-center"
+            >
+              <input
+                type="text"
+                placeholder="Name*"
+                class="w-[322.93px] md:w-[311.333px] h-[56px] bg-white p-[17px] border-b-2 border-[#007A51] text-[#444444] focus:outline-none"
+              />
+              <input
+                type="text"
+                placeholder="Your Phone Number*"
+                class="w-[322.93px] md:w-[311.333px] h-[56px] bg-white p-[17px] border-b-2 border-[#007A51] text-[#444444] focus:outline-none"
+              />
+              <input
+                type="text"
+                placeholder="Your email address*"
+                class="w-[322.93px] md:w-[311.333px] h-[56px] bg-white p-[17px] border-b-2 border-[#007A51] text-[#444444] focus:outline-none"
+              />
+              <input
+                type="submit"
+                value="Submit"
+                class="w-[322.93px] md:w-[208px] h-[48px] bg-[#114D72] text-white font-[16px] cursor-pointer hover:bg-[##114D72] transition-all duration-300"
+              />
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- The Section 3 Is Starting From Here  -->
+      <section
+        class="s3 w-screen min-h-screen flex justify-center items-center md:py-12 py-8 px-4"
+      >
+        <div
+          class="flex flex-col md:flex-row gap-8 max-w-6xl w-full items-start"
+        >
+          <!-- Left Side Image Div -->
+          <div class="md:w-1/2 w-full flex items-center justify-center">
+            <img
+              src="./images/s3/s3.png"
+              alt="Idea Image"
+              class="w-full hidden sm:block h-auto object-contain"
+            />
+             <img
+              src="./images/s3/s3Mobile.png"
+              alt="Idea Image"
+              class="w-full sm:hidden h-auto object-contain"
+            />
+          </div>
+
+          <!-- Right Side Content Div -->
+          <div class="md:w-[554px] flex flex-col gap-6">
+            <!-- Heading Container -->
+            <div class="headingSection space-y-4">
+              <h2 class="font-[600] text-[48px] md:text-[48px] text-[#000000]">
+                The Idea
+              </h2>
+              <p class="font-[400] text-[16px] md:text-[18px] text-[#00000099]">
+                Whispers of Wonder brings the comfort of podium living to a
+                future-ready growth corridor. Homes rise above traffic and
+                noise, opening into landscaped greens, light-filled lobbies, and
+                purposeful amenities designed for everyday ease.
+              </p>
+            </div>
+
+            <!-- List Container -->
+            <div class="flex flex-col gap-4">
+              <!-- Card Item Template -->
+              <div
+                class="card flex gap-4 items-start border-b border-[#BCBBBB] min-h-[70px]"
+              >
+                <div class="icon flex-shrink-0">
+                  <img
+                    src="./images/s3/s3icn1.png"
+                    alt="icon"
+                    class="w-[50px] h-[50px]"
+                  />
+                </div>
+                <p
+                  class="font-[400]  text-[18px] text-[#00000099]"
+                >
+                  G+32 towers | Podium-level living
+                </p>
+              </div>
+
+              <div
+                class="card flex gap-4 items-start border-b border-[#BCBBBB] min-h-[70px]"
+              >
+                <div class="icon flex-shrink-0">
+                  <img
+                    src="./images/s3/s3icn2.png"
+                    alt="icon"
+                    class="w-[50px] h-[50px]"
+                  />
+                </div>
+                <p
+                  class="font-[400]  text-[18px] text-[#00000099]"
+                >
+                  Spacious 3 BHK formats & limited duplexesSpacious 3 BHK
+                  formats & limited duplexes
+                </p>
+              </div>
+
+              <div
+                class="card flex gap-4 items-start border-b border-[#BCBBBB] min-h-[70px]"
+              >
+                <div class="icon flex-shrink-0">
+                  <img
+                    src="./images/s3/s3icn3.png"
+                    alt="icon"
+                    class="w-[50px] h-[50px]"
+                  />
+                </div>
+                <p
+                  class="font-[400] text-[18px] text-[#00000099]"
+                >
+                  Modern construction tech for superior finish & speed
+                </p>
+              </div>
+
+              <div
+                class="card flex gap-4 items-start border-b border-[#BCBBBB] min-h-[70px]"
+              >
+                <div class="icon flex-shrink-0">
+                  <img
+                    src="./images/s3/s3icn4.png"
+                    alt="icon"
+                    class="w-[50px] h-[50px]"
+                  />
+                </div>
+                <p
+                  class="font-[400]  text-[18px] text-[#00000099]"
+                >
+                  Clubhouse with pool, courts, fitness & co-working zones
+                </p>
+              </div>
+
+              <div
+                class="card flex gap-4 items-start border-b border-[#BCBBBB] min-h-[70px]"
+              >
+                <div class="icon flex-shrink-0">
+                  <img
+                    src="./images/s3/s3icn5.png"
+                    alt="icon"
+                    class="w-[50px] h-[50px]"
+                  />
+                </div>
+                <p
+                  class="font-[400]  text-[18px] text-[#00000099]"
+                >
+                  Secure, access-controlled community with 24×7 services
+                </p>
+              </div>
+
+              <div
+                class="card flex gap-4 items-start border-b border-[#BCBBBB] min-h-[70px]"
+              >
+                <div class="icon flex-shrink-0">
+                  <img
+                    src="./images/s3/s3icn6.png"
+                    alt="icon"
+                    class="w-[50px] h-[50px]"
+                  />
+                </div>
+                <p
+                  class="font-[400]  text-[18px] text-[#00000099]"
+                >
+                  Excellent connectivity via Yamuna Expressway; quick access to
+                  key employment & lifestyle hubs
+                </p>
+              </div>
+
+              <!-- Bottom Button -->
+              <div class="btmBtn mt-6 flex justify-center md:justify-start">
+                <img
+                  src="./images/s3/s3btn.png"
+                  alt="button"
+                  class="w-[180px] md:w-auto h-auto cursor-pointer"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- The Section 4 Is Starting From Here -->
+      <section
+        class="s4 w-screen py-16 px-4 md:px-12"
+        style="background: linear-gradient(to left, #0c2b21, #007a51)"
+      >
+        <div class="max-w-6xl mx-auto flex flex-col gap-8">
+          <!-- Header -->
+          <div class="header text-center text-white">
+            <h2 class="font-semibold text-[28px] md:text-[36px] leading-tight">
+              Why it works <br />
+              (for families & investors)
+            </h2>
+          </div>
+
+          <!-- Slider Container -->
+          <div class="slider relative items-center md:flex-row flex-col flex overflow-hidden gap-4">
+            <!-- Card 1 -->
+            <div class="card h-[336px] w-[354px] md:h-[478px] bg-white md:w-[598px]">
+              <div class="img mb-4">
+                <img
+                  src="./images/s4/s4card1.png"
+                  alt="Card 1"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class="text-center px-4">
+                <p class="text-[#0000000] text-[20px] font-[400]">
+                  Large, usable podium greens (kids play, pet-friendly pockets,
+                  sit-outs)
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card h-[336px] w-[354px] md:h-[478px] bg-white md:w-[598px]">
+              <div class="img mb-4">
+                <img
+                  src="./images/s4/s4card2.png"
+                  alt="Card 1"
+                  class="w-full h-full object-cover"
+                />
+              </div>
+              <div class="text-center px-4">
+                <p class="text-[#0000000] text-[20px] font-[400]">
+                  Amenity planning that balances leisure, wellness, and
+                  productivity
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slider Buttons -->
+          <div class="btns flex justify-center gap-4 mt-4">
+            <button
+              class="bg-white rounded-full flex justify-center items-center w-[63px] h-[62px] leftArr"
+            >
+              <img src="/images/s4/lftArr.png" alt="Left Arrow" />
+            </button>
+            <button
+              class="bg-white rounded-full flex justify-center items-center w-[63px] h-[62px] rightArr"
+            >
+              <img src="/images/s4/rghtArr.png" alt="Right Arrow" />
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 5 Is Starting From Here -->
+      <section
+        class="s5 w-screen py-16 px-4 md:px-12"
+        style="
+          background-image: url(./images/s5/s5bg.jpg);
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+        "
+      >
+        <div class="flex flex-col items-center gap-12">
+          <!-- Heading Part -->
+          <div class="text-center  space-y-2">
+            <h2 class="font-semibold text-[#000000] text-[36px]">Our Price</h2>
+            <p class="font-[400] text-[#000000] text-[18px]">
+             Designed for families seeking villa-like space in a secure high-rise
+            </p>
+          </div>
+
+          <!-- Cards Container -->
+          <div
+            class="cardsContainer flex flex-col md:flex-row flex-wrap justify-center items-center gap-6"
+          >
+            <!-- Card 1 -->
+            <div
+              style="
+                border-top-left-radius: 50px;
+                border-bottom-right-radius: 50px;
+              "
+              class="card w-[354px] md:w-[408px] bg-[#FFFFFF] h-[461px] flex flex-col justify-start overflow-hidden shadow-lg"
+            >
+              <div
+                class="cHeader w-full bg-[#114D72] text-white py-4 text-center"
+              >
+                <h2 class="font-[500] text-[30px]">3 BHK</h2>
+              </div>
+              <div class="flex flex-col items-center gap-4 p-6">
+                <div class="text-center">
+                  <h2 class="font-[600] text-[36px] text-[#007A51]">
+                    ₹ 1.35 CR*
+                  </h2>
+                  <p class="font-[600] text-[20px] uppercase text-[#007A51]">
+                    Onwards
+                  </p>
+                </div>
+                <div class="text-center">
+                  <h2 class="font-[400] text-[16px] text-[#00000099]">
+                    Super Area
+                  </h2>
+                  <p class="font-[500] text-[20px] uppercase text-[#000000]">
+                    1550 sq.ft. Approx
+                  </p>
+                </div>
+                <div class="text-center">
+                  <h2 class="font-[400] text-[16px] text-[#00000099]">Type</h2>
+                  <p class="font-[500] text-[20px] uppercase text-[#000000]">
+                    3 BHK
+                  </p>
+                </div>
+                <button
+                  class="w-[191px] h-[41px] bg-[#114D72] text-white font-[500] text-[16px] mt-4"
+                >
+                  Request A Call
+                </button>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div
+              style="
+                border-top-left-radius: 50px;
+                border-bottom-right-radius: 50px;
+              "
+              class="card w-[354px] md:w-[408px] bg-[#FFFFFF] h-[461px] flex flex-col justify-start overflow-hidden"
+            >
+              <div
+                class="cHeader w-full bg-[#114D72] text-white py-4 text-center"
+              >
+                <h2 class="font-[500] text-[30px]">  3 BHK+ST</h2>
+              </div>
+              <div class="flex flex-col items-center gap-4 p-6">
+                <div class="text-center">
+                  <h2 class="font-[600] text-[36px] text-[#007A51]">
+                   Price On 
+                  </h2> <p class="font-[600] text-[20px] uppercase  text-[#007A51]">
+                    Request
+                  </p>
+                </div>
+                <div class="text-center">
+                  <h2 class="font-[400] text-[16px] text-[#00000099]">
+                    Super Area
+                  </h2>
+                  <p class="font-[500] text-[20px] uppercase text-[#000000]">
+                    1550 sq.ft. Approx
+                  </p>
+                </div>
+                <div class="text-center">
+                  <h2 class="font-[400] text-[16px] text-[#00000099]">Type</h2>
+                  <p class="font-[500] text-[20px] uppercase text-[#000000]">
+                    3 BHK +ST
+                  </p>
+                </div>
+                <button
+                  class="w-[191px] h-[41px] bg-[#114D72] text-white font-[500] text-[16px] mt-4"
+                >
+                  Request A Call
+                </button>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+           
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 6 Is Starting From Here -->
+      <section
+        class="s6 w-screen bg-[#FFFFFF] md:py-16 md:px-12 flex justify-center items-center pb-8"
+      >
+        <div
+          class="max-w-6xl w-full flex flex-col md:flex-row gap-10 items-center"
+        >
+          <!-- Left Image Section -->
+          <div class="img w-full md:w-1/2 flex justify-center relative">
+            <img
+              src="./images/s6/s6.png"
+              alt="Amenities Image"
+              class="w-full h-[469px] object-cover"
+            />
+            <img src="./images/s6/s6Effect.png" class="absolute left-0 bottom-0 sm:hidden" alt="">
+          </div>
+
+          <!-- Right Content Section -->
+          <div class="w-full md:w-1/2 flex flex-col gap-4">
+            <!-- Header -->
+            <div class="header sm:text-start text-center">
+              <h2 class="font-[500] text-[36px] text-[#000000]">
+                Amenities
+              </h2>
+            </div>
+
+            <!-- Grid Cards -->
+            <div class="gridCards flex flex-col gap-6">
+              <!-- Row 1 With 3 Cards -->
+              <div class="flex flex-col md:flex-row md:justify-start gap-6">
+                <div class="img flex justify-center">
+                  <img
+                    src="./images/s6/s5c1.png"
+                    alt="Amenity 1"
+                    class="w-full w-[167px] h-[167px] object-contain"
+                  />
+                </div>
+                <div class="img flex justify-center">
+                  <img
+                    src="./images/s6/s5c2.png"
+                    alt="Amenity 2"
+                    class="w-full w-[167px] h-[167px] object-contain"
+                  />
+                </div>
+                <div class="img flex justify-center">
+                  <img
+                    src="./images/s6/s5c3.png"
+                    alt="Amenity 3"
+                    class="w-full w-[167px] h-[167px] object-contain"
+                  />
+                </div>
+              </div>
+
+              <!-- Row 2 With 3 Cards -->
+              <div class="flex flex-col md:flex-row md:justify-start gap-6">
+                <div class="img flex justify-center">
+                  <img
+                    src="./images/s6/s5c4.png"
+                    alt="Amenity 4"
+                    class="w-full w-[167px] h-[167px] object-contain"
+                  />
+                </div>
+                <div class="img flex justify-center">
+                  <img
+                    src="./images/s6/s5c5.png"
+                    alt="Amenity 5"
+                    class="w-full w-[167px] h-[167px] object-contain"
+                  />
+                </div>
+                <div class="img flex justify-center">
+                  <img
+                    src="./images/s6/s5c6.png"
+                    alt="Amenity 6"
+                    class="w-full w-[167px] h-[167px] object-contain"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 7 Is Starting From Here -->
+      <section
+        class="s7 w-screen min-h-screen flex justify-center items-center px-4 md:px-12 py-6 md:py-0"
+        style="
+          background-image: url(./images/s7/s7.jpg);
+          background-position: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+        "
+      >
+        <div
+          class="max-w-6xl w-full flex flex-col md:flex-row items-center justify-between gap-8"
+        >
+          <!-- Left Side Content Section -->
+          <div class="text-white space-y-8 w-full md:w-[513px]">
+            <!-- Location Block -->
+            <div class="space-y-4">
+              <h2 class="font-[600] text-[36px]">Location</h2>
+              <div
+                class="bg-[#BF1E2E] inline-block px-4 py-2 w-full font-[500] text-[18px]"
+              >
+                <p>Sector 22D, Yamuna Expressway, <br class="sm:hidden"> YEIDA</p>
+              </div>
+              <ul class="list-disc list-inside space-y-2">
+                <li class="font-[400] text-[20px]">
+                  Yamuna Expressway
+                </li>
+                <li class="font-[400] text-[20px]">
+                  Noida International Airport (Jewar)
+                </li>
+                <li class="font-[400] text-[20px]">
+                  Planned Media/Film City & Institutional Zones
+                </li>
+                <li class="font-[400] text-[20px]">
+                  Social Infrastructure
+                </li>
+              </ul>
+            </div>
+
+            <!-- Why This Corridor Block -->
+            <div class="space-y-4">
+              <h2 class="font-[600] text-[20px] md:text-[24px]">
+                Why this corridor
+              </h2>
+              <ul class="list-disc list-inside space-y-2">
+                <li class="font-[400] text-[20px]">
+                  Major public investment (airport, industrial & logistics
+                  nodes)
+                </li>
+                <li class="font-[400] text-[20px]">
+                  High-capacity arterial roads; future metro/rapid transit under
+                  planning
+                </li>
+                <li class="font-[400] text-[20px]">
+                  Early-mover advantage in a growth micro-market
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Right Side Img Section -->
+          <div class="flex justify-center w-full md:w-[726px]">
+            <img
+              src="./images/s7/s7Img.png"
+              alt="Location Map"
+              class="w-full max-w-[726px] h-auto md:h-[588px] object-contain shadow-lg"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 8 Is Starting From Here -->
+      <section
+        class="s8 w-screen py-16 px-4 md:px-12 flex justify-center items-center bg-white"
+      >
+        <div class="max-w-6xl w-full flex flex-col gap-8">
+          <!-- Header -->
+          <div class="header text-center">
+            <h2 class="font-[600] text-[28px] md:text-[36px] text-black">
+              Gallery
+            </h2>
+          </div>
+
+          <!-- Gallery Container -->
+          <div
+            class="gallery flex flex-col md:flex-row gap-6 justify-center items-center"
+          >
+            <!-- Right Side Image -->
+            <div
+              class="RightSide flex justify-center md:justify-start relative"
+            >
+              <img
+                src="./images/s8/s8i1.png"
+                alt="Gallery Main"
+                class="w-[392px] h-[701px] object-cover"
+              />
+              <button
+                class="absolute left-3 md:right-3 top-3 font-[600] bg-black text-white w-[155px] font-[20px] h-[45px]"
+              >
+                Exteriors
+              </button>
+            </div>
+
+            <!-- Left Side Grid Images -->
+            <div class="grid flex flex-col gap-6">
+              <!-- Row 1 -->
+              <div class="flex flex-col sm:flex-row gap-6">
+                <div class="img flex justify-center relative">
+                  <button
+                    class="absolute left-3 md:right-3 top-3 font-[600] bg-black text-white w-[155px] font-[20px] h-[45px]"
+                  >
+                    Podium Life
+                  </button>
+                  <img
+                    src="./images/s8/s8i2.png"
+                    alt=""
+                    class="w-[392px] h-[342px] object-cover"
+                  />
+                </div>
+                <div class="img flex justify-center relative">
+                  <button
+                    class="absolute left-3 md:right-3 top-3 font-[600] bg-black text-white w-[155px] font-[20px] h-[45px]"
+                  >
+                    Clubhouse
+                  </button>
+                  <img
+                    src="./images/s8/s8i4.png"
+                    alt=""
+                    class="w-[392px] h-[342px] object-cover"
+                  />
+                </div>
+              </div>
+
+              <!-- Row 2 -->
+              <div class="flex flex-col sm:flex-row gap-6">
+                <div class="img flex justify-center relative">
+                  <button
+                    class="absolute left-3 md:right-3 top-3 font-[600] bg-black text-white w-[155px] font-[20px] h-[45px]"
+                  >
+                    Residences
+                  </button>
+                  <img
+                    src="./images/s8/s8i6.png"
+                    alt=""
+                    class="w-[392px] h-[342px] object-cover"
+                  />
+                </div>
+                <div class="img flex justify-center relative">
+                  <button
+                    class="absolute left-3 md:right-3 top-3 font-[600] bg-black text-white w-[155px] font-[20px] h-[45px]"
+                  >
+                    Progress
+                  </button>
+                  <img
+                    src="./images/s8/s8i5.png"
+                    alt=""
+                    class="w-[392px] h-[342px] object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 9 Is Starting From Here  -->
+      <section
+        class="s9 w-screen py-20 flex flex-col items-center"
+        style="background: linear-gradient(to left, #0c2b21, #007a51)"
+      >
+        <!-- Heading -->
+        <div class="mb-8 text-center">
+          <h2
+            class="font-[600] text-[38px] text-white leading-tight"
+          >
+            Choose an Eldeco Home, Live Better
+          </h2>
+        </div>
+
+        <!-- Stats Grid -->
+        <!-- Stats Flex -->
+        <div class="w-full flex flex-col sm:flex-row justify-between flex-wrap">
+          <!-- Card 1 -->
+          <div
+            class="h-[200px] flex flex-col justify-center items-center text-center border-b border-[#1b8e67] sm:border-b-0 sm:border-r sm:flex-1"
+          >
+            <h2
+              class="text-white font-[600] text-[32px] leading-snug"
+            >
+              200+ <br />
+              <span class="font-[600] text-[36px]">Projects</span>
+            </h2>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="h-[200px] flex flex-col justify-center items-center text-center border-b border-[#1b8e67] sm:border-b-0 sm:border-r sm:flex-1"
+          >
+            <h2
+              class="text-white font-[600] text-[32px] leading-snug"
+            >
+              40+ <br />
+              <span class="font-[600] text-[36px]">Years</span>
+            </h2>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="h-[200px] flex flex-col justify-center items-center text-center border-b border-[#1b8e67] sm:border-b-0 sm:border-r sm:flex-1"
+          >
+            <h2
+              class="text-white font-[600] text-[32px] leading-snug"
+            >
+              30,000+ <br />
+              <span class="font-[600] text-[36px]">Homes</span>
+            </h2>
+          </div>
+
+          <!-- Card 4 -->
+          <div
+            class="h-[200px] flex flex-col justify-center items-center text-center sm:flex-1"
+          >
+            <h2
+              class="text-white font-[600] text-[32px] leading-snug"
+            >
+              20+ <br />
+              <span class="font-[600] text-[36px]">Cities</span>
+            </h2>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 10 Is Starting From Here  -->
+      <section
+        class="s10 w-screen bg-[#F4F4F4] flex justify-center items-center py-16 px-4"
+      >
+        <div class="flex flex-col max-w-[1100px] w-full gap-10">
+          <!-- Header Part  -->
+          <div class="header text-center space-y-4 px-2 md:px-0">
+            <h2 class="text-[36px] font-[600] text-[#000000]">
+              Get in Touch
+            </h2>
+            <p
+              class="font-[400] text-[18px] leading-relaxed text-[#000000]"
+            >
+              If you would like to know more details or something specific, feel
+              free to contact us. <br />
+              Our site representative will give you a call back.
+            </p>
+          </div>
+
+          <!-- Form Section -->
+          <div class="bg-white p-8">
+            <form class="flex flex-col gap-6">
+              <!-- Row 1 -->
+              <div class="flex flex-col md:flex-row gap-4">
+                <input
+                  type="text"
+                  placeholder="Name*"
+                  class="flex-1 h-[56px] bg-[#FBFBFB] px-4 border-b-2 border-[#007A51] text-[#444444] focus:outline-none inpts"
+                />
+                <input
+                  type="text"
+                  placeholder="Your email address*"
+                  class="flex-1 h-[56px] bg-[#FBFBFB] px-4 border-b-2 border-[#007A51] text-[#444444] focus:outline-none inpts"
+                />
+                <input
+                  type="text"
+                  placeholder="Phone No*"
+                  class="flex-1 h-[56px] bg-[#FBFBFB] px-4 border-b-2 border-[#007A51] text-[#444444] focus:outline-none inpts"
+                />
+              </div>
+
+              <!-- Row 2 -->
+              <div>
+                <textarea
+                  placeholder="Message"
+                  class="w-full h-[140px] resize-none bg-[#FBFBFB] px-4 py-3 border-b-2 border-[#007A51] text-[#444444] focus:outline-none"
+                ></textarea>
+              </div>
+
+              <!-- Row 3 -->
+              <div
+                class="w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-4"
+              >
+                <label for="" class="flex items-center gap-2 text-[#444444]">
+                  <input type="checkbox" class="w-4 h-4" />
+                  <p class="text-[14px] md:text-[16px] font-[400]">
+                    I accept the Terms & Conditions.
+                  </p>
+                </label>
+
+                <button
+                  class="w-full md:w-[168px] h-[48px] font-[500] text-[16px] bg-[#000000] text-white hover:bg-[#444444] transition-colors"
+                >
+                  Contact Us
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+  <footer class="bg-[#021E15] w-screen flex flex-col justify-center items-center relative px-4 py-12 md:py-16">
+  <!-- Top Content -->
+  <div class="flex flex-col justify-center items-center pb-8 text-center max-w-[1100px] w-full space-y-2 mb-4">
+    <button
+      class="bg-[#0C4D38] text-white text-[16px] md:text-[20px] font-[600] px-6 py-3 w-full md:w-[372px] h-[56px] md:h-[64px]"
+    >
+      HARERA REG. NO. 107 OF 2024
+    </button>
+
+    <h2 class="font-[600] text-[24px] md:text-[36px] text-white">
+      Disclaimer
+    </h2>
+
+    <p class="font-[400] text-[14px] md:text-[18px] leading-relaxed text-[#FFFFFF] px-2">
+      The content and visuals in this advertisement are solely an artistic
+      rendering for illustrative purposes and are not to scale, it does not
+      constitute a legal offer or forms part of any legally binding agreement.
+      The promoter of the project clarifies that the information provided herein
+      are indicative in nature. Intending purchasers are advised to verify all
+      the details independently with the respective sales team of promoter of
+      the project regarding plans, specifications, terms of sales and payments
+      and other relevant details independently before making any purchase
+      decision regarding any unit in the project.
+    </p>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div
+    class="absolute bottom-0 left-0 w-full bg-[#011811] flex justify-center items-center py-3"
+  >
+    <p
+      class="italic text-[12px] md:text-[16px] text-[#FFFFFF66] font-[400] text-center"
+    >
+      Disclaimer & Privacy Policy
+    </p>
+  </div>
+</footer>
+
+    <!-- GSAP Script -->
+    <script src="./script.js"></script>
+  </body>
+</html>

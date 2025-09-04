@@ -1,0 +1,21 @@
+@media (max-width: 450px) {
+  .s1 {
+    background-image: url(./images/s1/mobileHero.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+  }
+  .s1Img {
+    display: none;
+  }
+  .s5 {
+    background-image: none !important;
+    background-color: #F6F6F6;
+  }
+  .inpts{
+    height: 56px !important;
+    flex: none !important;
+  }
+}
