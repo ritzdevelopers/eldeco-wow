@@ -71,17 +71,17 @@ function navbarAnimations() {
 navbarAnimations();
 
 function section1Animations() {
- // Animate heading and paragraph
+  // Animate heading and paragraph
   gsap.from("#s2-text", {
     scrollTrigger: {
       trigger: "#s2-text",
       start: "top 80%",
-      toggleActions: "play none none none"
+      toggleActions: "play none none none",
     },
     opacity: 0,
     y: 50,
     duration: 1,
-    ease: "power2.out"
+    ease: "power2.out",
   });
 
   // Animate form
@@ -89,14 +89,57 @@ function section1Animations() {
     scrollTrigger: {
       trigger: "#s2-form",
       start: "top 80%",
-      toggleActions: "play none none none"
+      toggleActions: "play none none none",
     },
     opacity: 0,
     y: 50,
     duration: 1,
     ease: "power2.out",
-    delay: 0.2
+    delay: 0.2,
   });
 }
 
 // section1Animations();
+
+document.getElementById("leadForm").addEventListener("submit", leadController);
+
+async function leadController(e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const date = new Date();
+
+  const Name = form.Name.value;
+  const Email = form.Email.value;
+  const Phone = form.Phone.value;
+  const Message = "No Message";
+  const Time = date.toTimeString();
+  const leadDate = date.toDateString(); // ✅ renamed
+  console.log(Name, Email, Phone, Message, Time, leadDate);
+
+  const data = {
+    Name,
+    Email,
+    Phone,
+    Message,
+    Date: leadDate,
+    Time,
+  };
+
+  const scriptURL =
+    "https://script.google.com/macros/s/AKfycbzbJ1FxHWkGumbxv4zOaa6rCoUkI8Vccg-vhInYA2jtI22We6JTfFw95FvDSzq7OGUy/exec";
+
+  try {
+    const res = await fetch(scriptURL, {
+      method: "POST",
+      body: JSON.stringify(data),
+    });
+    const result = await res.json();
+    console.log(result);
+    alert("Lead Saved Successfully!");
+    form.reset();
+  } catch (err) {
+    console.error("Error:", err);
+    alert("Something went wrong!");
+  }
+}

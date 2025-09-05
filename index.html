@@ -7,7 +7,7 @@
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- GSAP CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -25,7 +25,7 @@
         }
       }
     </style>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body class="bg-white overflow-x-hidden">
     <!-- Navbar -->
@@ -90,7 +90,7 @@
           <li><a href="#">Location</a></li>
           <li>
             <button
-              class="w-full px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+              class="w-full px-4 py-2 bg-[#114D72] text-white rounded hover:bg-[#114D72]"
             >
               Request A Visit
             </button>
@@ -117,8 +117,16 @@
         <div class="max-w-8xl mx-auto flex flex-col items-center gap-6">
           <!-- Heading -->
           <div id="s2-text" class="text-center text-white">
-            <h2 class="font-semibold uppercase text-[28px]">Get In Touch</h2>
-            <p class="font-[400] capitalize text-[20px] mt-2">
+            <h2
+              class="font-semibold uppercase text-[28px]"
+              style="font-family: MonstrMdm"
+            >
+              Get In Touch
+            </h2>
+            <p
+              style="font-family: Monstr"
+              class="font-[400] capitalize text-[20px] mt-2"
+            >
               Please enter details below and we shall get in touch with you
               shortly.
             </p>
@@ -127,21 +135,26 @@
           <!-- Form -->
           <div id="s2-form" class="w-full flex justify-center mt-6">
             <form
-              action=""
-              class="flex flex-col md:flex-row flex-wrap gap-4 md:gap-4 justify-center"
+            action="POST"
+             id="leadForm"
+              class="frm flex flex-col md:flex-row flex-wrap gap-4 md:gap-4 justify-center"
+              style="font-family: Monstr"
             >
               <input
                 type="text"
                 placeholder="Name*"
+                name="Name"
                 class="w-[322.93px] md:w-[311.333px] h-[56px] bg-white p-[17px] border-b-2 border-[#007A51] text-[#444444] focus:outline-none"
               />
               <input
-                type="text"
+                type="number"
+                name="Phone"
                 placeholder="Your Phone Number*"
                 class="w-[322.93px] md:w-[311.333px] h-[56px] bg-white p-[17px] border-b-2 border-[#007A51] text-[#444444] focus:outline-none"
               />
               <input
-                type="text"
+                type="email"
+                name="Email"
                 placeholder="Your email address*"
                 class="w-[322.93px] md:w-[311.333px] h-[56px] bg-white p-[17px] border-b-2 border-[#007A51] text-[#444444] focus:outline-none"
               />
@@ -169,7 +182,7 @@
               alt="Idea Image"
               class="w-full hidden sm:block h-auto object-contain"
             />
-             <img
+            <img
               src="./images/s3/s3Mobile.png"
               alt="Idea Image"
               class="w-full sm:hidden h-auto object-contain"
@@ -180,10 +193,16 @@
           <div class="md:w-[554px] flex flex-col gap-6">
             <!-- Heading Container -->
             <div class="headingSection space-y-4">
-              <h2 class="font-[600] text-[48px] md:text-[48px] text-[#000000]">
+              <h2
+                style="font-family: MonstrSemiBold"
+                class="font-[600] text-[48px] md:text-[48px] text-[#000000]"
+              >
                 The Idea
               </h2>
-              <p class="font-[400] text-[16px] md:text-[18px] text-[#00000099]">
+              <p
+                style="font-family: Monstr"
+                class="font-[400] text-[16px] md:text-[18px] text-[#00000099]"
+              >
                 Whispers of Wonder brings the comfort of podium living to a
                 future-ready growth corridor. Homes rise above traffic and
                 noise, opening into landscaped greens, light-filled lobbies, and
@@ -192,7 +211,7 @@
             </div>
 
             <!-- List Container -->
-            <div class="flex flex-col gap-4">
+            <div style="font-family: Monstr" class="flex flex-col gap-4">
               <!-- Card Item Template -->
               <div
                 class="card flex gap-4 items-start border-b border-[#BCBBBB] min-h-[70px]"
@@ -204,9 +223,7 @@
                     class="w-[50px] h-[50px]"
                   />
                 </div>
-                <p
-                  class="font-[400]  text-[18px] text-[#00000099]"
-                >
+                <p class="font-[400] text-[18px] text-[#00000099]">
                   G+32 towers | Podium-level living
                 </p>
               </div>
@@ -221,9 +238,7 @@
                     class="w-[50px] h-[50px]"
                   />
                 </div>
-                <p
-                  class="font-[400]  text-[18px] text-[#00000099]"
-                >
+                <p class="font-[400] text-[18px] text-[#00000099]">
                   Spacious 3 BHK formats & limited duplexesSpacious 3 BHK
                   formats & limited duplexes
                 </p>
@@ -239,9 +254,7 @@
                     class="w-[50px] h-[50px]"
                   />
                 </div>
-                <p
-                  class="font-[400] text-[18px] text-[#00000099]"
-                >
+                <p class="font-[400] text-[18px] text-[#00000099]">
                   Modern construction tech for superior finish & speed
                 </p>
               </div>
@@ -256,9 +269,7 @@
                     class="w-[50px] h-[50px]"
                   />
                 </div>
-                <p
-                  class="font-[400]  text-[18px] text-[#00000099]"
-                >
+                <p class="font-[400] text-[18px] text-[#00000099]">
                   Clubhouse with pool, courts, fitness & co-working zones
                 </p>
               </div>
@@ -273,9 +284,7 @@
                     class="w-[50px] h-[50px]"
                   />
                 </div>
-                <p
-                  class="font-[400]  text-[18px] text-[#00000099]"
-                >
+                <p class="font-[400] text-[18px] text-[#00000099]">
                   Secure, access-controlled community with 24×7 services
                 </p>
               </div>
@@ -290,9 +299,7 @@
                     class="w-[50px] h-[50px]"
                   />
                 </div>
-                <p
-                  class="font-[400]  text-[18px] text-[#00000099]"
-                >
+                <p class="font-[400] text-[18px] text-[#00000099]">
                   Excellent connectivity via Yamuna Expressway; quick access to
                   key employment & lifestyle hubs
                 </p>
@@ -319,16 +326,24 @@
         <div class="max-w-6xl mx-auto flex flex-col gap-8">
           <!-- Header -->
           <div class="header text-center text-white">
-            <h2 class="font-semibold text-[28px] md:text-[36px] leading-tight">
+            <h2
+              style="font-family: Monstr"
+              class="font-semibold text-[28px] md:text-[36px] leading-tight"
+            >
               Why it works <br />
               (for families & investors)
             </h2>
           </div>
 
           <!-- Slider Container -->
-          <div class="slider relative items-center md:flex-row flex-col flex overflow-hidden gap-4">
+          <div
+            class="slider relative items-center md:flex-row flex-col flex overflow-hidden gap-4"
+            style="font-family: Monstr"
+          >
             <!-- Card 1 -->
-            <div class="card h-[336px] w-[354px] md:h-[478px] bg-white md:w-[598px]">
+            <div
+              class="card h-[336px] w-[354px] md:h-[478px] bg-white md:w-[598px]"
+            >
               <div class="img mb-4">
                 <img
                   src="./images/s4/s4card1.png"
@@ -345,7 +360,9 @@
             </div>
 
             <!-- Card 2 -->
-            <div class="card h-[336px] w-[354px] md:h-[478px] bg-white md:w-[598px]">
+            <div
+              class="card h-[336px] w-[354px] md:h-[478px] bg-white md:w-[598px]"
+            >
               <div class="img mb-4">
                 <img
                   src="./images/s4/s4card2.png"
@@ -363,7 +380,7 @@
           </div>
 
           <!-- Slider Buttons -->
-          <div class="btns flex justify-center gap-4 mt-4">
+          <div class="btns flex justify-center hidden gap-4 mt-4">
             <button
               class="bg-white rounded-full flex justify-center items-center w-[63px] h-[62px] leftArr"
             >
@@ -390,16 +407,26 @@
       >
         <div class="flex flex-col items-center gap-12">
           <!-- Heading Part -->
-          <div class="text-center  space-y-2">
-            <h2 class="font-semibold text-[#000000] text-[36px]">Our Price</h2>
-            <p class="font-[400] text-[#000000] text-[18px]">
-             Designed for families seeking villa-like space in a secure high-rise
+          <div class="text-center space-y-2">
+            <h2
+              style="font-family: MonstrMdm"
+              class="font-semibold text-[#000000] text-[36px]"
+            >
+              Our Price
+            </h2>
+            <p
+              style="font-family: Monstr"
+              class="font-[400] text-[#000000] text-[18px]"
+            >
+              Designed for families seeking villa-like space in a secure
+              high-rise
             </p>
           </div>
 
           <!-- Cards Container -->
           <div
             class="cardsContainer flex flex-col md:flex-row flex-wrap justify-center items-center gap-6"
+            style="font-family: MonstrSemiBold"
           >
             <!-- Card 1 -->
             <div
@@ -456,13 +483,14 @@
               <div
                 class="cHeader w-full bg-[#114D72] text-white py-4 text-center"
               >
-                <h2 class="font-[500] text-[30px]">  3 BHK+ST</h2>
+                <h2 class="font-[500] text-[30px]">3 BHK+ST</h2>
               </div>
               <div class="flex flex-col items-center gap-4 p-6">
                 <div class="text-center">
                   <h2 class="font-[600] text-[36px] text-[#007A51]">
-                   Price On 
-                  </h2> <p class="font-[600] text-[20px] uppercase  text-[#007A51]">
+                    Price On
+                  </h2>
+                  <p class="font-[600] text-[20px] uppercase text-[#007A51]">
                     Request
                   </p>
                 </div>
@@ -489,7 +517,6 @@
             </div>
 
             <!-- Card 3 -->
-           
           </div>
         </div>
       </section>
@@ -508,14 +535,21 @@
               alt="Amenities Image"
               class="w-full h-[469px] object-cover"
             />
-            <img src="./images/s6/s6Effect.png" class="absolute left-0 bottom-0 sm:hidden" alt="">
+            <img
+              src="./images/s6/s6Effect.png"
+              class="absolute left-0 bottom-0 sm:hidden"
+              alt=""
+            />
           </div>
 
           <!-- Right Content Section -->
           <div class="w-full md:w-1/2 flex flex-col gap-4">
             <!-- Header -->
             <div class="header sm:text-start text-center">
-              <h2 class="font-[500] text-[36px] text-[#000000]">
+              <h2
+                class="font-[500] text-[36px] text-[#000000]"
+                style="font-family: MonstrMdm"
+              >
                 Amenities
               </h2>
             </div>
@@ -592,35 +626,49 @@
           <!-- Left Side Content Section -->
           <div class="text-white space-y-8 w-full md:w-[513px]">
             <!-- Location Block -->
-            <div class="space-y-4">
-              <h2 class="font-[600] text-[36px]">Location</h2>
+            <div class="space-y-4 pl-5">
+              <h2
+                class="font-[600] text-[36px]"
+                style="font-family: MonstrSemiBold"
+              >
+                Location
+              </h2>
               <div
                 class="bg-[#BF1E2E] inline-block px-4 py-2 w-full font-[500] text-[18px]"
+                style="font-family: MonstrMdm"
               >
-                <p>Sector 22D, Yamuna Expressway, <br class="sm:hidden"> YEIDA</p>
+                <p>
+                  Sector 22D, Yamuna Expressway, <br class="sm:hidden" />
+                  YEIDA
+                </p>
               </div>
-              <ul class="list-disc list-inside space-y-2">
-                <li class="font-[400] text-[20px]">
-                  Yamuna Expressway
-                </li>
+              <ul
+                class="list-disc list-outside space-y-2"
+                style="font-family: Monstr"
+              >
+                <li class="font-[400] text-[20px]">Yamuna Expressway</li>
                 <li class="font-[400] text-[20px]">
                   Noida International Airport (Jewar)
                 </li>
                 <li class="font-[400] text-[20px]">
                   Planned Media/Film City & Institutional Zones
                 </li>
-                <li class="font-[400] text-[20px]">
-                  Social Infrastructure
-                </li>
+                <li class="font-[400] text-[20px]">Social Infrastructure</li>
               </ul>
             </div>
 
             <!-- Why This Corridor Block -->
-            <div class="space-y-4">
-              <h2 class="font-[600] text-[20px] md:text-[24px]">
+            <div class="space-y-4 pl-5">
+              <h2
+                class="font-[600] md:text-[36px]"
+                style="font-family: MonstrSemiBold"
+              >
                 Why this corridor
               </h2>
-              <ul class="list-disc list-inside space-y-2">
+              <ul
+                style="font-family: Monstr"
+                class="list-disc list-outside space-y-2"
+              >
                 <li class="font-[400] text-[20px]">
                   Major public investment (airport, industrial & logistics
                   nodes)
@@ -654,7 +702,10 @@
         <div class="max-w-6xl w-full flex flex-col gap-8">
           <!-- Header -->
           <div class="header text-center">
-            <h2 class="font-[600] text-[28px] md:text-[36px] text-black">
+            <h2
+              style="font-family: MonstrMdm"
+              class="font-[600] text-[28px] md:text-[36px] text-black"
+            >
               Gallery
             </h2>
           </div>
@@ -744,13 +795,14 @@
       <!-- Section 9 Is Starting From Here  -->
       <section
         class="s9 w-screen py-20 flex flex-col items-center"
-        style="background: linear-gradient(to left, #0c2b21, #007a51)"
+        style="
+          background: linear-gradient(to left, #0c2b21, #007a51);
+          font-family: MonstrSemiBold;
+        "
       >
         <!-- Heading -->
         <div class="mb-8 text-center">
-          <h2
-            class="font-[600] text-[38px] text-white leading-tight"
-          >
+          <h2 class="font-[600] text-[38px] text-white leading-tight">
             Choose an Eldeco Home, Live Better
           </h2>
         </div>
@@ -762,9 +814,7 @@
           <div
             class="h-[200px] flex flex-col justify-center items-center text-center border-b border-[#1b8e67] sm:border-b-0 sm:border-r sm:flex-1"
           >
-            <h2
-              class="text-white font-[600] text-[32px] leading-snug"
-            >
+            <h2 class="text-white font-[600] text-[32px] leading-snug">
               200+ <br />
               <span class="font-[600] text-[36px]">Projects</span>
             </h2>
@@ -774,9 +824,7 @@
           <div
             class="h-[200px] flex flex-col justify-center items-center text-center border-b border-[#1b8e67] sm:border-b-0 sm:border-r sm:flex-1"
           >
-            <h2
-              class="text-white font-[600] text-[32px] leading-snug"
-            >
+            <h2 class="text-white font-[600] text-[32px] leading-snug">
               40+ <br />
               <span class="font-[600] text-[36px]">Years</span>
             </h2>
@@ -786,9 +834,7 @@
           <div
             class="h-[200px] flex flex-col justify-center items-center text-center border-b border-[#1b8e67] sm:border-b-0 sm:border-r sm:flex-1"
           >
-            <h2
-              class="text-white font-[600] text-[32px] leading-snug"
-            >
+            <h2 class="text-white font-[600] text-[32px] leading-snug">
               30,000+ <br />
               <span class="font-[600] text-[36px]">Homes</span>
             </h2>
@@ -798,9 +844,7 @@
           <div
             class="h-[200px] flex flex-col justify-center items-center text-center sm:flex-1"
           >
-            <h2
-              class="text-white font-[600] text-[32px] leading-snug"
-            >
+            <h2 class="text-white font-[600] text-[32px] leading-snug">
               20+ <br />
               <span class="font-[600] text-[36px]">Cities</span>
             </h2>
@@ -815,10 +859,14 @@
         <div class="flex flex-col max-w-[1100px] w-full gap-10">
           <!-- Header Part  -->
           <div class="header text-center space-y-4 px-2 md:px-0">
-            <h2 class="text-[36px] font-[600] text-[#000000]">
+            <h2
+              style="font-family: MonstrMdm"
+              class="text-[36px] uppercase font-[600] text-[#000000]"
+            >
               Get in Touch
             </h2>
             <p
+              style="font-family: Monstr"
               class="font-[400] text-[18px] leading-relaxed text-[#000000]"
             >
               If you would like to know more details or something specific, feel
@@ -829,7 +877,7 @@
 
           <!-- Form Section -->
           <div class="bg-white p-8">
-            <form class="flex flex-col gap-6">
+            <form class="flex flex-col gap-6" style="font-family: Monstr">
               <!-- Row 1 -->
               <div class="flex flex-col md:flex-row gap-4">
                 <input
@@ -880,43 +928,55 @@
       </section>
     </main>
 
-  <footer class="bg-[#021E15] w-screen flex flex-col justify-center items-center relative px-4 py-12 md:py-16">
-  <!-- Top Content -->
-  <div class="flex flex-col justify-center items-center pb-8 text-center max-w-[1100px] w-full space-y-2 mb-4">
-    <button
-      class="bg-[#0C4D38] text-white text-[16px] md:text-[20px] font-[600] px-6 py-3 w-full md:w-[372px] h-[56px] md:h-[64px]"
+    <footer
+      class="bg-[#021E15] w-screen flex flex-col justify-center items-center relative px-4 py-12 md:py-16"
     >
-      HARERA REG. NO. 107 OF 2024
-    </button>
+      <!-- Top Content -->
+      <div
+        class="flex flex-col justify-center items-center pb-8 text-center max-w-[1100px] w-full space-y-2 mb-4"
+      >
+        <button
+          style="font-family: MonstrSemiBold"
+          class="bg-[#0C4D38] text-white text-[16px] md:text-[20px] font-[600] px-6 py-3 w-full md:w-[1008px] md:h-[98px] h-[100px]"
+        >
+          UP RERA REG NO. UPRERAPRJ752382/09/2025 <br />
+          WEBSITE: WWW.UP-RERA.IN
+        </button>
 
-    <h2 class="font-[600] text-[24px] md:text-[36px] text-white">
-      Disclaimer
-    </h2>
+        <h2
+          style="font-family: MonstrSemiBold"
+          class="font-[600] text-[24px] md:text-[36px] text-white"
+        >
+          Disclaimer
+        </h2>
 
-    <p class="font-[400] text-[14px] md:text-[18px] leading-relaxed text-[#FFFFFF] px-2">
-      The content and visuals in this advertisement are solely an artistic
-      rendering for illustrative purposes and are not to scale, it does not
-      constitute a legal offer or forms part of any legally binding agreement.
-      The promoter of the project clarifies that the information provided herein
-      are indicative in nature. Intending purchasers are advised to verify all
-      the details independently with the respective sales team of promoter of
-      the project regarding plans, specifications, terms of sales and payments
-      and other relevant details independently before making any purchase
-      decision regarding any unit in the project.
-    </p>
-  </div>
+        <p
+          class="font-[400] text-[14px] md:text-[18px] leading-relaxed text-[#FFFFFF] px-2"
+          style="font-family: Monstr"
+        >
+          The content and visuals in this advertisement are solely an artistic
+          rendering for illustrative purposes and are not to scale, it does not
+          constitute a legal offer or forms part of any legally binding
+          agreement. The promoter of the project clarifies that the information
+          provided herein are indicative in nature. Intending purchasers are
+          advised to verify all the details independently with the respective
+          sales team of promoter of the project regarding plans, specifications,
+          terms of sales and payments and other relevant details independently
+          before making any purchase decision regarding any unit in the project.
+        </p>
+      </div>
 
-  <!-- Bottom Bar -->
-  <div
-    class="absolute bottom-0 left-0 w-full bg-[#011811] flex justify-center items-center py-3"
-  >
-    <p
-      class="italic text-[12px] md:text-[16px] text-[#FFFFFF66] font-[400] text-center"
-    >
-      Disclaimer & Privacy Policy
-    </p>
-  </div>
-</footer>
+      <!-- Bottom Bar -->
+      <div
+        class="absolute bottom-0 left-0 w-full bg-[#011811] flex justify-center items-center py-3"
+      >
+        <p
+          class="italic text-[12px] md:text-[16px] text-[#FFFFFF66] font-[400] text-center"
+        >
+          Disclaimer & Privacy Policy
+        </p>
+      </div>
+    </footer>
 
     <!-- GSAP Script -->
     <script src="./script.js"></script>

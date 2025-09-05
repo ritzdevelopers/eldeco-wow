@@ -12,10 +12,23 @@
   }
   .s5 {
     background-image: none !important;
-    background-color: #F6F6F6;
+    background-color: #f6f6f6;
   }
-  .inpts{
+  .inpts {
     height: 56px !important;
     flex: none !important;
   }
+}
+@font-face {
+  font-family: Monstr;
+  src: url(./static/Montserrat-Regular.ttf);
+}
+
+@font-face {
+  font-family: MonstrSemiBold;
+  src: url(./static/Montserrat-SemiBold.ttf);
+}
+@font-face {
+  font-family: MonstrMdm;
+  src: url(./static/Montserrat-Medium.ttf);
 }
