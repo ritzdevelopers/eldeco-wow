@@ -100,11 +100,14 @@ function section1Animations() {
 }
 
 // section1Animations();
+
+
 document.getElementById("leadForm").addEventListener("submit", leadController);
 
 async function leadController(e) {
   e.preventDefault();
-
+  console.log("API Hit");
+  
   const form = e.target;
   const date = new Date();
 
