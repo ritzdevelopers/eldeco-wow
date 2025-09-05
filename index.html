@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Landing Page</title>
+    <title>Eldeco Wow</title>
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -44,11 +44,11 @@
           class="hidden md:flex gap-[40px] text-[#000000] font-[400] text-[16px]"
         >
           <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Amenities</a></li>
-          <li><a href="#">Floor Plans</a></li>
-          <li><a href="#">Gallery</a></li>
-          <li><a href="#">Location</a></li>
+          <li><a href="#About">About</a></li>
+          <li><a href="#Amenities">Amenities</a></li>
+          <li><a href="#Floor-Plans">Floor Plans</a></li>
+          <li><a href="#Gallery">Gallery</a></li>
+          <li><a href="#Location">Location</a></li>
         </ul>
 
         <!-- Desktop Button -->
@@ -83,11 +83,11 @@
       <div id="mobile-menu" class="hidden md:hidden bg-white w-full shadow">
         <ul class="flex flex-col gap-4 p-4 text-gray-700 font-medium">
           <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Amenities</a></li>
-          <li><a href="#">Floor Plans</a></li>
-          <li><a href="#">Gallery</a></li>
-          <li><a href="#">Location</a></li>
+          <li><a href="#About">About</a></li>
+          <li><a href="#Amenities">Amenities</a></li>
+          <li><a href="#Floor-Plans">Floor Plans</a></li>
+          <li><a href="#Gallery">Gallery</a></li>
+          <li><a href="#Location">Location</a></li>
           <li>
             <button
               class="w-full px-4 py-2 bg-[#114D72] text-white rounded hover:bg-[#114D72]"
@@ -142,10 +142,13 @@
           </button>
         </div>
       </div>
+
+   <!-- Popup Overlay -->
+
       <!-- Section 1 -->
-      <section class="s1 w-screen overflow-hidden min-h-[10vh]">
+      <section id="#" class="s1 w-screen overflow-hidden min-h-[10vh]">
         <img
-          src="./images/s1/s1A.png"
+          src="./images/s1/s1-Taboola.jpg"
           alt="Section Image"
           class="w-screen h-auto object-fill s1Img"
         />
@@ -153,6 +156,7 @@
 
       <!-- Section 2 Is Starting From Here -->
       <section
+     
         class="s2 py-16 px-4 md:px-12"
         style="background: linear-gradient(to left, #0c2b21, #007a51)"
       >
@@ -216,6 +220,7 @@
 
       <!-- The Section 3 Is Starting From Here  -->
       <section
+      id="Floor-Plans"
         class="s3 w-screen min-h-screen flex justify-center items-center md:py-12 py-8 px-4"
       >
         <div
@@ -569,6 +574,7 @@
 
       <!-- Section 6 Is Starting From Here -->
       <section
+      id="Amenities"
         class="s6 w-screen bg-[#FFFFFF] md:py-16 md:px-12 flex justify-center items-center pb-8"
       >
         <div
@@ -658,6 +664,7 @@
 
       <!-- Section 7 Is Starting From Here -->
       <section
+      id="Location"
         class="s7 w-screen min-h-screen flex justify-center items-center px-4 md:px-12 py-6 md:py-0"
         style="
           background-image: url(./images/s7/s7.jpg);
@@ -742,6 +749,7 @@
 
       <!-- Section 8 Is Starting From Here -->
       <section
+      id="Gallery"
         class="s8 w-screen py-16 px-4 md:px-12 flex justify-center items-center bg-white"
       >
         <div class="max-w-6xl w-full flex flex-col gap-8">
@@ -986,6 +994,7 @@
     </main>
 
     <footer
+     id="About"
       class="bg-[#021E15] w-screen flex flex-col justify-center items-center relative px-4 py-12 md:py-16"
     >
       <!-- Top Content -->
@@ -994,7 +1003,7 @@
       >
         <button
           style="font-family: MonstrSemiBold"
-          class="bg-[#0C4D38] text-white text-[16px] md:text-[20px] font-[600] px-6 py-3 w-full md:w-[1008px] md:h-[98px] h-[100px]"
+          class="bg-[#0C4D38] text-white text-[16px] md:text-[20px] font-[600] px-6 py-3 w-full lg:w-[1008px] md:h-[98px] h-[100px]"
         >
           UP RERA REG NO. UPRERAPRJ752382/09/2025 <br />
           WEBSITE: WWW.UP-RERA.IN

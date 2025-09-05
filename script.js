@@ -123,7 +123,7 @@ async function leadController(e) {
   params.append("Phone", form.Phone.value);
   params.append("Message", form.Message?.value || "No Message");
   params.append("Date", date.toLocaleDateString("en-US"));
-  params.append("sheetName", "Google Display");
+  params.append("sheetName", "Google PPC");
   // Google Display, Google P Max, Google Gemand Gen, Taboola, HTDS, TOI, Google PPC
   params.append(
     "Time",
@@ -167,3 +167,5 @@ function showPopup(message) {
 function closePopup() {
   popup.classList.add("hidden");
 }
+
+
