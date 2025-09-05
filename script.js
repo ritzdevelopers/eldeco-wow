@@ -100,7 +100,6 @@ function section1Animations() {
 }
 
 // section1Animations();
-
 document.getElementById("leadForm").addEventListener("submit", leadController);
 
 async function leadController(e) {
@@ -109,30 +108,39 @@ async function leadController(e) {
   const form = e.target;
   const date = new Date();
 
+  // ✅ Prepare form data
+  const formData = new FormData(form);
   const data = {
-    Name: form.Name.value,
-    Email: form.Email.value,
-    Phone: form.Phone.value,
+    Date: date.toLocaleDateString("en-US"),
+    Time: date.toLocaleTimeString("en-US", {
+      hour12: true,
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+    }),
     Message: "No Message",
-    Date: date.toDateString(),
-    Time: date.toTimeString(),
   };
 
+  formData.forEach((value, key) => {
+    data[key] = value;
+  });
+
   const scriptURL =
-    "https://script.google.com/macros/s/AKfycbzbJ1FxHWkGumbxv4zOaa6rCoUkI8Vccg-vhInYA2jtI22We6JTfFw95FvDSzq7OGUy/exec";
+    "https://script.google.com/macros/s/AKfycbyobbiK62RKeLLQJ-lB6hLdgIQwtWsYNyp3FrhJg1Exf4hSgR6zijvrjRZeSwq3lzwp0Q/exec";
 
   try {
+    // ✅ Send as form-encoded to avoid CORS
     await fetch(scriptURL, {
       method: "POST",
-       mode: "no-cors",
-      headers: { "Content-Type": "application/json" }, // ✅ send JSON
-      body: JSON.stringify(data),
+      body: new URLSearchParams(data),
+      mode: "no-cors",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
     });
 
-    alert("Lead Saved Successfully!");
     form.reset();
   } catch (err) {
     console.error("Error:", err);
-    alert("Something went wrong!");
+  } finally {
+    // showLoader(false);
   }
 }
