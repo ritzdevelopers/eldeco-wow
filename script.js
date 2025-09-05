@@ -105,8 +105,6 @@ const loader = document.getElementById("loader");
 const popup = document.getElementById("popup");
 const popupMessage = document.getElementById("popupMessage");
 
-console.log(window.location.href);
-
 // Attach listener to all forms
 forms.forEach((form) => form.addEventListener("submit", leadController));
 
@@ -123,7 +121,7 @@ async function leadController(e) {
   params.append("Phone", form.Phone.value);
   params.append("Message", form.Message?.value || "No Message");
   params.append("Date", date.toLocaleDateString("en-US"));
-  params.append("sheetName", "Google PPC");
+  params.append("sheetName", "Google Display");
   // Google Display, Google P Max, Google Gemand Gen, Taboola, HTDS, TOI, Google PPC
   params.append(
     "Time",
@@ -146,10 +144,12 @@ async function leadController(e) {
     });
 
     const json = await res.json();
-    console.log("Response:", json);
 
     form.reset();
     showPopup("Form submitted successfully!");
+    if (json) {
+      window.location.href = "thanks.html";
+    }
   } catch (err) {
     console.error("Error:", err);
     showPopup("Error submitting form. Please try again.");
@@ -168,4 +168,44 @@ function closePopup() {
   popup.classList.add("hidden");
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+  const popupOverlay = document.getElementById("popupOverlay");
+  const popupForm = document.getElementById("popupForm");
+  const closePopupBtn = document.getElementById("closePopup");
 
+  // Function to open popup
+  function openPopup() {
+    popupOverlay.classList.remove("hidden");
+    setTimeout(() => {
+      popupForm.classList.remove("scale-95", "opacity-0");
+      popupForm.classList.add("scale-100", "opacity-100");
+    }, 10);
+    document.body.style.overflow = "hidden"; // Prevent scrolling
+  }
+
+  // Function to close popup
+  function closePopup() {
+    popupForm.classList.add("scale-95", "opacity-0");
+    setTimeout(() => {
+      popupOverlay.classList.add("hidden");
+    }, 200);
+    document.body.style.overflow = "auto"; // Restore scrolling
+  }
+
+  // Auto open popup after 7 seconds
+  setTimeout(openPopup, 7000);
+
+  // Close popup events
+  closePopupBtn.addEventListener("click", closePopup);
+  popupOverlay.addEventListener("click", (e) => {
+    if (e.target === popupOverlay) closePopup();
+  });
+
+  // Handle form submission
+
+
+  // Open popup on all CTA buttons
+  document.querySelectorAll(".cta-button").forEach((btn) => {
+    btn.addEventListener("click", openPopup);
+  });
+});

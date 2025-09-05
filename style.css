@@ -27,7 +27,6 @@
   }
 }
 
-
 @font-face {
   font-family: Monstr;
   src: url(./static/Montserrat-Regular.ttf);
@@ -55,10 +54,18 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #114D72, #0c2b21);
+  background: linear-gradient(to bottom, #114d72, #0c2b21);
 }
-
+.frm-btn {
+  background: linear-gradient(to right, #114d72, #0c2b21);
+  color: white;
+  font-weight: 700;
+}
 /* Smooth scrolling for the entire page */
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden !important;
 }

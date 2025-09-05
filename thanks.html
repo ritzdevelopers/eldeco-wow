@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thank You - Eldeco Wow</title>
+
+    <!-- Tailwind CSS CDN (same as your main page) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      /* Using the same fonts as your main page */
+      @font-face {
+        font-family: "Monstr";
+        src: url("path-to-your-font/Monstr.woff2") format("woff2");
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "MonstrMdm";
+        src: url("path-to-your-font/MonstrMdm.woff2") format("woff2");
+        font-weight: 500;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "MonstrSemiBold";
+        src: url("path-to-your-font/MonstrSemiBold.woff2") format("woff2");
+        font-weight: 600;
+        font-style: normal;
+      }
+
+      body {
+        font-family: "Monstr", sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-white min-h-screen flex flex-col">
+    <!-- Header with logo -->
+    <header class="w-full bg-white shadow py-4">
+      <div class="container mx-auto px-4">
+        <div class="logo">
+          <img
+            src="./images/logo/eLogo.png"
+            alt="Eldeco Wow Logo"
+            class="h-[27px] w-[137px]"
+          />
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow flex items-center justify-center py-12 px-4">
+      <div class="max-w-2xl mx-auto text-center">
+        <!-- Checkmark icon -->
+        <div class="mb-8">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-24 w-24 text-green-600 mx-auto"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+        </div>
+
+        <!-- Thank you message -->
+        <h1
+          class="text-3xl md:text-4xl font-semibold text-gray-800 mb-6"
+          style="font-family: MonstrMdm"
+        >
+          Thank You for Contacting Us!
+        </h1>
+
+        <p class="text-lg text-gray-600 mb-10 max-w-md mx-auto">
+          We have received your information and our representative will contact
+          you shortly. Meanwhile, you can explore more about Eldeco Wow.
+        </p>
+
+        <!-- Back button -->
+        <a
+          href="index.html"
+          class="inline-block px-8 py-3 bg-[#114D72] text-white font-medium rounded hover:bg-[#0d3a5a] transition-colors duration-300"
+        >
+          Back to Homepage
+        </a>
+      </div>
+    </main>
+
+    <!-- Footer (similar to your main page) -->
+    <footer class="bg-[#021E15] text-white py-8 px-4">
+      <div class="container mx-auto text-center">
+        <p class="text-sm opacity-70">
+          &copy; 2023 Eldeco Wow. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
