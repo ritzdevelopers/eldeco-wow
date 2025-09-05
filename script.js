@@ -105,8 +105,10 @@ const loader = document.getElementById("loader");
 const popup = document.getElementById("popup");
 const popupMessage = document.getElementById("popupMessage");
 
+console.log(window.location.href);
+
 // Attach listener to all forms
-forms.forEach(form => form.addEventListener("submit", leadController));
+forms.forEach((form) => form.addEventListener("submit", leadController));
 
 async function leadController(e) {
   e.preventDefault();
@@ -121,6 +123,8 @@ async function leadController(e) {
   params.append("Phone", form.Phone.value);
   params.append("Message", form.Message?.value || "No Message");
   params.append("Date", date.toLocaleDateString("en-US"));
+  params.append("sheetName", "Google Display");
+  // Google Display, Google P Max, Google Gemand Gen, Taboola, HTDS, TOI, Google PPC
   params.append(
     "Time",
     date.toLocaleTimeString("en-US", {
@@ -131,7 +135,8 @@ async function leadController(e) {
     })
   );
 
-  const scriptURL = "https://script.google.com/macros/s/AKfycbzl_NzGOcjsBaYVVOEoh6GRp4wE_ZikWGfEMa7yFWmsxPsW0To59gYPcfapupGAC7Gs/exec";
+  const scriptURL =
+    "https://script.google.com/macros/s/AKfycbw5Ma1R2K1RqW0fnXBXwC-NujxZF4IpLe11e0v3Icm4ZMqrBMDIBQc1VThnjGXze2kc/exec";
 
   try {
     const res = await fetch(scriptURL, {

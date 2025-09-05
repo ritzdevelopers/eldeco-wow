@@ -20,6 +20,14 @@
     flex: none !important;
   }
 }
+@media (max-width: 938px) {
+  .s5 {
+    background-image: none !important;
+    background-color: #f6f6f6;
+  }
+}
+
+
 @font-face {
   font-family: Monstr;
   src: url(./static/Montserrat-Regular.ttf);
