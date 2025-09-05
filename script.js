@@ -109,33 +109,26 @@ async function leadController(e) {
   const form = e.target;
   const date = new Date();
 
-  const Name = form.Name.value;
-  const Email = form.Email.value;
-  const Phone = form.Phone.value;
-  const Message = "No Message";
-  const Time = date.toTimeString();
-  const leadDate = date.toDateString(); // ✅ renamed
-  console.log(Name, Email, Phone, Message, Time, leadDate);
-
   const data = {
-    Name,
-    Email,
-    Phone,
-    Message,
-    Date: leadDate,
-    Time,
+    Name: form.Name.value,
+    Email: form.Email.value,
+    Phone: form.Phone.value,
+    Message: "No Message",
+    Date: date.toDateString(),
+    Time: date.toTimeString(),
   };
 
   const scriptURL =
     "https://script.google.com/macros/s/AKfycbzbJ1FxHWkGumbxv4zOaa6rCoUkI8Vccg-vhInYA2jtI22We6JTfFw95FvDSzq7OGUy/exec";
 
   try {
-    const res = await fetch(scriptURL, {
+    await fetch(scriptURL, {
       method: "POST",
+       mode: "no-cors",
+      headers: { "Content-Type": "application/json" }, // ✅ send JSON
       body: JSON.stringify(data),
     });
-    const result = await res.json();
-    console.log(result);
+
     alert("Lead Saved Successfully!");
     form.reset();
   } catch (err) {
