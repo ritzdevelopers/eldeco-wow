@@ -99,51 +99,66 @@ function section1Animations() {
   });
 }
 
-// section1Animations();
+// Select all forms
+const forms = document.querySelectorAll(".leadForm");
+const loader = document.getElementById("loader");
+const popup = document.getElementById("popup");
+const popupMessage = document.getElementById("popupMessage");
 
-
-document.getElementById("leadForm").addEventListener("submit", leadController);
+// Attach listener to all forms
+forms.forEach(form => form.addEventListener("submit", leadController));
 
 async function leadController(e) {
   e.preventDefault();
-  console.log("API Hit");
-  
   const form = e.target;
-  const date = new Date();
 
-  // ✅ Prepare form data
-  const formData = new FormData(form);
-  const data = {
-    Date: date.toLocaleDateString("en-US"),
-    Time: date.toLocaleTimeString("en-US", {
+  loader.classList.remove("hidden"); // Show loader
+
+  const date = new Date();
+  const params = new URLSearchParams();
+  params.append("Name", form.Name.value);
+  params.append("Email", form.Email.value);
+  params.append("Phone", form.Phone.value);
+  params.append("Message", form.Message?.value || "No Message");
+  params.append("Date", date.toLocaleDateString("en-US"));
+  params.append(
+    "Time",
+    date.toLocaleTimeString("en-US", {
       hour12: true,
       hour: "2-digit",
       minute: "2-digit",
       second: "2-digit",
-    }),
-    Message: "No Message",
-  };
+    })
+  );
 
-  formData.forEach((value, key) => {
-    data[key] = value;
-  });
-
-  const scriptURL =
-    "https://script.google.com/macros/s/AKfycbyobbiK62RKeLLQJ-lB6hLdgIQwtWsYNyp3FrhJg1Exf4hSgR6zijvrjRZeSwq3lzwp0Q/exec";
+  const scriptURL = "https://script.google.com/macros/s/AKfycbzl_NzGOcjsBaYVVOEoh6GRp4wE_ZikWGfEMa7yFWmsxPsW0To59gYPcfapupGAC7Gs/exec";
 
   try {
-    // ✅ Send as form-encoded to avoid CORS
-    await fetch(scriptURL, {
+    const res = await fetch(scriptURL, {
       method: "POST",
-      body: new URLSearchParams(data),
-      mode: "no-cors",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: params.toString(),
     });
 
+    const json = await res.json();
+    console.log("Response:", json);
+
     form.reset();
+    showPopup("Form submitted successfully!");
   } catch (err) {
     console.error("Error:", err);
+    showPopup("Error submitting form. Please try again.");
   } finally {
-    // showLoader(false);
+    loader.classList.add("hidden"); // Hide loader
   }
+}
+
+// Popup functions
+function showPopup(message) {
+  popupMessage.textContent = message;
+  popup.classList.remove("hidden");
+}
+
+function closePopup() {
+  popup.classList.add("hidden");
 }

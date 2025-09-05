@@ -100,6 +100,48 @@
     </nav>
 
     <main class="mt-[4rem]">
+      <!-- Loader (fixed, single instance for all forms) -->
+      <div
+        id="loader"
+        class="fixed inset-0 bg-black bg-opacity-25 flex items-center justify-center hidden z-50"
+      >
+        <svg
+          class="animate-spin h-10 w-10 text-white"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <circle
+            class="opacity-25"
+            cx="12"
+            cy="12"
+            r="10"
+            stroke="currentColor"
+            stroke-width="4"
+          ></circle>
+          <path
+            class="opacity-75"
+            fill="currentColor"
+            d="M4 12a8 8 0 018-8v8H4z"
+          ></path>
+        </svg>
+      </div>
+
+      <!-- Popup (single instance) -->
+      <div
+        id="popup"
+        class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50"
+      >
+        <div class="bg-white p-6 rounded shadow-lg text-center max-w-sm">
+          <p id="popupMessage" class="mb-4"></p>
+          <button
+            onclick="closePopup()"
+            class="bg-[#114D72] text-white px-4 py-2 rounded hover:bg-[#114D72]"
+          >
+            Close
+          </button>
+        </div>
+      </div>
       <!-- Section 1 -->
       <section class="s1 w-screen overflow-hidden min-h-[10vh]">
         <img
@@ -135,29 +177,34 @@
           <!-- Form -->
           <div id="s2-form" class="w-full flex justify-center mt-6">
             <form
-             id="leadForm"
-              class="frm flex flex-col md:flex-row flex-wrap gap-4 md:gap-4 justify-center"
+              action="POST"
+              id="leadForm"
+              class="frm leadForm flex flex-col md:flex-row flex-wrap gap-4 md:gap-4 justify-center"
               style="font-family: Monstr"
             >
               <input
+                required
                 type="text"
                 placeholder="Name*"
                 name="Name"
                 class="w-[322.93px] md:w-[311.333px] h-[56px] bg-white p-[17px] border-b-2 border-[#007A51] text-[#444444] focus:outline-none"
               />
               <input
+                required
                 type="number"
                 name="Phone"
                 placeholder="Your Phone Number*"
                 class="w-[322.93px] md:w-[311.333px] h-[56px] bg-white p-[17px] border-b-2 border-[#007A51] text-[#444444] focus:outline-none"
               />
               <input
+                required
                 type="email"
                 name="Email"
                 placeholder="Your email address*"
                 class="w-[322.93px] md:w-[311.333px] h-[56px] bg-white p-[17px] border-b-2 border-[#007A51] text-[#444444] focus:outline-none"
               />
               <input
+                required
                 type="submit"
                 value="Submit"
                 class="w-[322.93px] md:w-[208px] h-[48px] bg-[#114D72] text-white font-[16px] cursor-pointer hover:bg-[##114D72] transition-all duration-300"
@@ -645,7 +692,6 @@
                 class="list-disc list-outside space-y-2"
                 style="font-family: Monstr"
               >
-                
                 <li class="font-[400] text-[20px]">
                   Noida International Airport (Jewar)
                 </li>
@@ -876,21 +922,30 @@
 
           <!-- Form Section -->
           <div class="bg-white p-8">
-            <form class="flex flex-col gap-6" style="font-family: Monstr">
+            <form
+              class="flex leadForm flex-col gap-6"
+              style="font-family: Monstr"
+            >
               <!-- Row 1 -->
               <div class="flex flex-col md:flex-row gap-4">
                 <input
+                  required
                   type="text"
+                  name="Name"
                   placeholder="Name*"
                   class="flex-1 h-[56px] bg-[#FBFBFB] px-4 border-b-2 border-[#007A51] text-[#444444] focus:outline-none inpts"
                 />
                 <input
-                  type="text"
+                  required
+                  type="email"
+                  name="Email"
                   placeholder="Your email address*"
                   class="flex-1 h-[56px] bg-[#FBFBFB] px-4 border-b-2 border-[#007A51] text-[#444444] focus:outline-none inpts"
                 />
                 <input
-                  type="text"
+                  required
+                  type="number"
+                  name="Phone"
                   placeholder="Phone No*"
                   class="flex-1 h-[56px] bg-[#FBFBFB] px-4 border-b-2 border-[#007A51] text-[#444444] focus:outline-none inpts"
                 />
@@ -899,7 +954,9 @@
               <!-- Row 2 -->
               <div>
                 <textarea
+                  name="Message"
                   placeholder="Message"
+                  required
                   class="w-full h-[140px] resize-none bg-[#FBFBFB] px-4 py-3 border-b-2 border-[#007A51] text-[#444444] focus:outline-none"
                 ></textarea>
               </div>
@@ -909,13 +966,14 @@
                 class="w-full flex flex-col md:flex-row justify-between items-start md:items-center gap-4"
               >
                 <label for="" class="flex items-center gap-2 text-[#444444]">
-                  <input type="checkbox" class="w-4 h-4" />
+                  <input required type="checkbox" class="w-4 h-4" />
                   <p class="text-[14px] md:text-[16px] font-[400]">
                     I accept the Terms & Conditions.
                   </p>
                 </label>
 
                 <button
+                type="submit"
                   class="w-full md:w-[168px] h-[48px] font-[500] text-[16px] bg-[#000000] text-white hover:bg-[#444444] transition-colors"
                 >
                   Contact Us
